@@ -33,6 +33,15 @@ let getfact = () => {
         fact.style.display="block";
         fact.innerHTML = `<p class = "msg">The input field cannot be empty</p>`
     }
-}
+};
+
+let getRandomFact = () => {
+    //Random Number between 0 to 300
+    let num = Math.floor(Math.random() * 301);
+    fetchFact(num);
+};
 
 getFactBtn.addEventListener( 'click', getfact );
+ranFactBtn.addEventListener('click', getRandomFact);
+
+window.addEventListener("load", getRandomFact)
